@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\VSCode\\GameStore.API\\GameStore.API.csproj": {}
+    "D:\\VSCode\\GameStore.API\\GameStore.API.csproj": {}
   },
   "projects": {
-    "d:\\VSCode\\GameStore.API\\GameStore.API.csproj": {
+    "D:\\VSCode\\GameStore.API\\GameStore.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\VSCode\\GameStore.API\\GameStore.API.csproj",
+        "projectUniqueName": "D:\\VSCode\\GameStore.API\\GameStore.API.csproj",
         "projectName": "GameStore.API",
-        "projectPath": "d:\\VSCode\\GameStore.API\\GameStore.API.csproj",
+        "projectPath": "D:\\VSCode\\GameStore.API\\GameStore.API.csproj",
         "packagesPath": "C:\\Users\\shaik\\.nuget\\packages\\",
-        "outputPath": "d:\\VSCode\\GameStore.API\\obj\\",
+        "outputPath": "D:\\VSCode\\GameStore.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
