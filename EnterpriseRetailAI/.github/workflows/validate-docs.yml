@@ -1,0 +1,48 @@
+name: Validate Architecture Documentation
+
+on:
+  pull_request:
+    paths:
+      - 'EnterpriseRetailAI-Docs/**/*.md'
+      - 'EnterpriseRetailAI-Docs/**/*.sql'
+      - '.doc-rules'
+      - 'AGENTS.md'
+      - 'QUICK_REFERENCE.md'
+      - 'GLOSSARY.md'
+      - 'DOCUMENT_MANIFEST.md'
+      - 'GETTING_STARTED.md'
+      - 'validate-docs.sh'
+      - '.copilot/**'
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install markdown linter
+        run: |
+          npm install -g markdownlint-cli
+
+      - name: Run documentation validation
+        run: |
+          chmod +x ./validate-docs.sh
+          ./validate-docs.sh --verbose
+
+      - name: Comment on PR with validation results
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ **Documentation Validation Complete**\n\n`validate-docs.sh` has run across the architecture documentation changes. See the workflow run for details: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+            })

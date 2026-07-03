@@ -1,0 +1,415 @@
+# .doc-rules — EnterpriseRetailAI Documentation Validation Rules
+
+**Purpose:** Enforce documentation consistency across the EnterpriseRetailAI repository and guide authors in creating new architecture documents.
+
+---
+
+## Document Validation Rules
+
+All markdown files in `EnterpriseRetailAI-Docs/` MUST follow these rules:
+
+### Rule 1: Required Header Metadata
+
+**Requirement:** Every design document MUST start with a metadata table.
+
+**Format:**
+```markdown
+# [Document Title]
+
+| Attribute | Value |
+|---|---|
+| Document ID | HLD-001, LLD-004, ADR-003, etc. |
+| Type | High-Level Design, Low-Level Design, ADR, etc. |
+| Version | 1.0 |
+| Status | Approved, Proposed, Deprecated, etc. |
+| Author | Enterprise Architecture Office |
+| Date | Month Year |
+```
+
+**Validation:**
+- ✅ All documents have this header
+- ✅ Document ID follows pattern: HLD-###, LLD-###, ADR-###, *_Spec, *_Config, or Model_Cards
+- ✅ Status is one of: Approved, Proposed, Deprecated, Superseded
+- ✅ Date is in "Month Year" format (e.g., "June 2026")
+
+**Example Files:** [HLD-001](EnterpriseRetailAI-Docs/HLD-001_System_Architecture_Overview.md), [LLD-004](EnterpriseRetailAI-Docs/LLD-004_Fraud_Detection_Service.md), [ADR-002](EnterpriseRetailAI-Docs/ADR-002_Schema_Per_Tenant.md)
+
+---
+
+### Rule 2: ADR Structure
+
+**Requirement:** Architecture Decision Records MUST follow the Michael Nygard ADR template.
+
+**Structure:**
+```markdown
+# ADR-[###] — [Decision Title]
+
+| Attribute | Value |
+|---|---|
+| Document ID | ADR-### |
+| Type | Architecture Decision Record |
+| Version | 1.0 |
+| Status | Approved / Proposed |
+| Author | Enterprise Architecture Office |
+| Date | Month Year |
+| Supersedes | [Previous ADR ID, if applicable] |
+
+## 1. Context
+[What is the issue we're addressing? What forces are at play?]
+
+## 2. Decision
+[What is our decision?]
+
+## 3. Consequences
+[What becomes easier or harder as a result?]
+
+### Positive Consequences
+- [Benefit 1]
+- [Benefit 2]
+
+### Negative Consequences
+- [Trade-off 1]
+- [Trade-off 2]
+
+## 4. References
+[Links to HLDs, LLDs, or related ADRs]
+```
+
+**Notes:**
+- New ADRs should use the standard metadata table format shown above.
+- Existing legacy ADRs may continue to use the current repository pattern:
+  `| ID | ADR-### | Status | Approved | Date | 2026-01 | ... |`
+
+**Validation:**
+- ✅ All ADRs (ADR-001 through ADR-008) follow this structure or the legacy metadata pattern
+- ✅ Each section is populated (no empty sections)
+- ✅ "Supersedes" field only present if the ADR overturns a previous decision
+- ✅ References link to relevant implementation documents
+
+**Example:** [ADR-003_Event_Sourcing.md](EnterpriseRetailAI-Docs/ADR-003_Event_Sourcing.md)
+
+---
+
+### Rule 3: HLD Structure
+
+**Requirement:** High-Level Designs MUST cover the layer/domain from an architectural perspective.
+
+**Expected Sections:**
+1. **Purpose** — What this design document covers
+2. **System Context or Architecture Diagram** — How this layer fits in the broader system
+3. **Key Components** — Principal components and their responsibilities
+4. **Design Rationale** — Why this architecture was chosen (link to ADRs)
+5. **Quality Attributes** — Performance, scalability, security, availability targets
+6. **Cross-Layer Interactions** — How this layer communicates with others
+7. **References** — Links to LLDs, ADRs, API specs, and schemas
+
+**Validation:**
+- ✅ All HLDs (HLD-001 through HLD-010) have metadata header
+- ✅ HLD-001 serves as the system context; others drill into specific layers/domains
+- ✅ Each HLD references at least one related LLD for implementation details
+- ✅ Diagrams use consistent ASCII art or Mermaid format
+
+**Examples:** [HLD-001](EnterpriseRetailAI-Docs/HLD-001_System_Architecture_Overview.md), [HLD-005](EnterpriseRetailAI-Docs/HLD-005_AI_ML_Platform.md), [HLD-010](EnterpriseRetailAI-Docs/HLD-010_Offline_Architecture.md)
+
+---
+
+### Rule 4: LLD Structure
+
+**Requirement:** Low-Level Designs MUST describe implementation details at the component/service level.
+
+**Expected Sections:**
+1. **Purpose** — What component/service this LLD documents
+2. **Overview** — Architecture diagram or component diagram
+3. **Detailed Design** — Internal structure, algorithms, state machines
+4. **Interfaces** — APIs, database schemas, event contracts
+5. **Deployment & Operations** — How it runs in production, configuration, monitoring
+6. **Quality Attributes & SLAs** — Latency, throughput, availability targets
+7. **Testing Strategy** — Unit, integration, end-to-end test approach
+8. **References** — Links to HLDs, ADRs, API specs, DDL, and related LLDs
+
+**Validation:**
+- ✅ All LLDs (LLD-001 through LLD-015) have metadata header
+- ✅ Each LLD is associated with one HLD (e.g., LLD-001 is detail for HLD-002)
+- ✅ Diagrams include sequence, state machine, or component diagrams as appropriate
+- ✅ API contracts reference the relevant *_API_Spec.md
+- ✅ Schema references link to appropriate *_DDL.sql
+
+**Examples:** [LLD-001](EnterpriseRetailAI-Docs/LLD-001_POS_Transaction_Engine.md), [LLD-011](EnterpriseRetailAI-Docs/LLD-011_Event_Sync_CRDT_Engine.md), [LLD-015](EnterpriseRetailAI-Docs/LLD-015_MLOps_Pipeline_Design.md)
+
+---
+
+### Rule 5: API Specification Structure
+
+**Requirement:** API Specifications MUST define contracts for inter-service communication.
+
+**Expected Sections:**
+1. **Overview** — Which services/layers use this API
+2. **Authentication & Authorization** — How callers authenticate (OAuth 2.0, API keys, mTLS)
+3. **Endpoints** — Full REST/gRPC endpoint definitions with:
+   - Method (GET, POST, PUT, DELETE, PATCH)
+   - Path
+   - Request/response schemas (in OpenAPI 3.0 or gRPC format)
+   - Status codes and error handling
+   - Rate limits and quotas
+4. **Data Models** — Shared domain models and enums
+5. **Examples** — Real request/response examples
+6. **References** — Link to relevant LLDs and design docs
+
+**Validation:**
+- ✅ All API specs follow consistent structure
+- ✅ Request/response schemas are valid JSON Schema or Protobuf
+- ✅ Error codes are documented with meaning and recovery strategies
+- ✅ Rate limits and quotas are specified
+- ✅ Backward compatibility implications are noted for versioning
+
+**Examples:** [POS_API_Spec.md](EnterpriseRetailAI-Docs/POS_API_Spec.md), [AI_Inference_API_Spec.md](EnterpriseRetailAI-Docs/AI_Inference_API_Spec.md)
+
+---
+
+### Rule 6: SQL DDL Schema Structure
+
+**Requirement:** Database schema files MUST include comprehensive documentation.
+
+**Expected Content:**
+```sql
+--
+-- Database Schema: [Tenant | Platform Shared | POS Local | Store Edge]
+-- Purpose: [What data this schema holds and why]
+-- Version: 1.0
+-- Date: Month Year
+--
+
+-- Table: [table_name]
+-- Purpose: [What this table stores and key business logic]
+-- Partitioning: [Yes/No, and strategy if yes]
+-- Indexes: [Key indexes and why]
+-- Foreign Keys: [Parent table relationships]
+
+CREATE TABLE [table_name] (
+    -- Column definitions with inline comments
+    id UUID PRIMARY KEY,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    ...
+);
+
+-- Migration: [If modifying existing schema, describe the change]
+-- ALTER TABLE [table_name] ADD COLUMN [column_name] [type];
+```
+
+**Validation:**
+- ✅ All *_DDL.sql files include purpose header and migration comments
+- ✅ Primary keys and foreign keys are defined
+- ✅ Indexes are created for frequently queried columns
+- ✅ Temporal columns (created_at, updated_at) are present where appropriate
+- ✅ Comments explain business logic for complex columns or constraints
+
+**Examples:** [tenant_schema_DDL.sql](EnterpriseRetailAI-Docs/tenant_schema_DDL.sql), [pos_local_sqlite_DDL.sql](EnterpriseRetailAI-Docs/pos_local_sqlite_DDL.sql)
+
+---
+
+### Rule 7: Cross-Document Linking
+
+**Requirement:** All documents MUST use consistent Markdown links to reference each other.
+
+**Format:**
+```markdown
+# Link to a document
+[HLD-001_System_Architecture_Overview.md](EnterpriseRetailAI-Docs/HLD-001_System_Architecture_Overview.md)
+
+# Link to a section
+[Event Sourcing Pattern](EnterpriseRetailAI-Docs/ADR-003_Event_Sourcing.md#3-consequences)
+
+# Link to a line range in SQL
+[See schema for transactions](EnterpriseRetailAI-Docs/tenant_schema_DDL.sql#L42-L65)
+```
+
+**Validation:**
+- ✅ Document links use relative paths from repository root
+- ✅ Links point to files that exist
+- ✅ Section anchors are auto-generated from markdown headers (lowercase, dashes)
+- ✅ No broken links (validate with markdown linter)
+
+**Anti-pattern:** Plain text file names without links
+
+---
+
+### Rule 8: Naming Conventions
+
+**Requirement:** All files MUST follow consistent naming patterns.
+
+**Pattern:**
+```
+HLD-###_[Descriptive_Title_In_PascalCase].md
+LLD-###_[Descriptive_Title_In_PascalCase].md
+ADR-###_[Descriptive_Title_In_PascalCase].md
+[Service/Domain]_API_Spec.md
+[Service/Domain]_DDL.sql
+[Service/Domain]_Config.md
+```
+
+**Examples:**
+- ✅ `HLD-001_System_Architecture_Overview.md`
+- ✅ `LLD-004_Fraud_Detection_Service.md`
+- ✅ `ADR-003_Event_Sourcing.md`
+- ✅ `POS_API_Spec.md`
+- ✅ `tenant_schema_DDL.sql`
+- ❌ `HLD 1 - System Architecture.md` (spaces, dashes instead of underscores)
+- ❌ `pos_api_spec.md` (missing service name qualification)
+
+**Validation:**
+- ✅ All files follow the pattern exactly
+- ✅ No spaces in filenames (use underscores)
+- ✅ Document ID and file suffix match (HLD-001 → HLD-001_*)
+
+---
+
+### Rule 9: Documentation Artifact Manifest
+
+**Requirement:** The repository MUST include a top-level manifest for documentation and validation artifacts.
+
+**Manifest file:** `DOCUMENT_MANIFEST.md`
+
+**Contents:**
+- List of architecture documents and their purpose
+- Validation tools and scripts
+- Copilot skill artifacts and prompt templates
+- Workflow references (`.github/workflows/validate-docs.yml`)
+
+**Validation:**
+- ✅ `DOCUMENT_MANIFEST.md` exists at repository root
+- ✅ New or changed documentation artifacts are reflected in the manifest
+
+---
+
+### Rule 9: Documentation Artifact Manifest
+
+**Requirement:** The repository MUST include a top-level manifest for documentation and validation artifacts.
+
+**Manifest file:** `DOCUMENT_MANIFEST.md`
+
+**Contents:**
+- List of architecture documents and their purpose
+- Validation tools and scripts
+- Copilot skill artifacts and prompt templates
+- Workflow references (`.github/workflows/validate-docs.yml`)
+
+**Validation:**
+- ✅ `DOCUMENT_MANIFEST.md` exists at repository root
+- ✅ New or changed documentation artifacts are reflected in the manifest
+
+---
+
+### Rule 9: Metadata Consistency
+
+**Requirement:** Document metadata MUST be consistent and up-to-date.
+
+**Validation:**
+- ✅ Version increments only when document is updated (e.g., 1.0 → 1.1)
+- ✅ Status changes reflect governance (Proposed → Approved → Deprecated)
+- ✅ Date is updated whenever content changes
+- ✅ Author field is "Enterprise Architecture Office" (or specific person if updated)
+- ✅ ADRs include "Supersedes" field only if they override a previous decision
+
+**Example:**
+```markdown
+| Attribute | Value |
+|---|---|
+| Document ID | ADR-003 |
+| Type | Architecture Decision Record |
+| Version | 1.0 |
+| Status | Approved |
+| Author | Enterprise Architecture Office |
+| Date | January 2026 |
+| Supersedes | — |
+```
+
+---
+
+### Rule 10: TOGAF ADM Compliance
+
+**Requirement:** Documents MUST align with TOGAF 10 ADM phases.
+
+**Phases Covered:**
+- **Phase A (Architecture Vision):** [TOGAF_GlobalRetailPOS_EA_Document.md](EnterpriseRetailAI-Docs/TOGAF_GlobalRetailPOS_EA_Document.md)
+- **Phase B (Business Architecture):** [HLD-006, HLD-009](EnterpriseRetailAI-Docs/) (data, multitenancy)
+- **Phase C (Information Systems Architecture):** [HLD-006, LLD-013](EnterpriseRetailAI-Docs/) (schemas, data flow)
+- **Phase D (Technology Architecture):** [HLD-001, HLD-003, HLD-004, HLD-005](EnterpriseRetailAI-Docs/) (layers, platforms)
+- **Phase E (Opportunities & Solutions):** [ADRs, LLDs](EnterpriseRetailAI-Docs/) (design choices)
+- **Phase F (Migration Planning):** [LLD-010](EnterpriseRetailAI-Docs/LLD-010_Tenant_Provisioning_Service.md) (onboarding)
+- **Phase G (Implementation Governance):** [HLD-007](EnterpriseRetailAI-Docs/HLD-007_Security_Compliance.md) (compliance)
+- **Phase H (Architecture Change Management):** [MLOps configs](EnterpriseRetailAI-Docs/MLOps_Pipeline_Config.md) (drift monitoring)
+
+**Validation:**
+- ✅ Documents fit logically within TOGAF phases
+- ✅ ADRs are traceable to architectural decisions (Phase E)
+- ✅ HLDs provide design rationale for technology choices
+- ✅ LLDs provide implementation guidance for architects and developers
+
+---
+
+## Validation Checklist
+
+When creating or updating a document, verify:
+
+```markdown
+## Document Checklist
+
+- [ ] **Header:** Metadata table present with all required fields (ID, Type, Version, Status, Author, Date)
+- [ ] **Links:** All cross-document links are relative paths and target existing files
+- [ ] **Naming:** Filename follows pattern (HLD-###_*, LLD-###_*, ADR-###_*, *_Spec.md, *_DDL.sql)
+- [ ] **Structure:** Document includes expected sections (Purpose, Overview, Design, References)
+- [ ] **ADRs only:** If ADR, includes Context, Decision, Consequences, and References
+- [ ] **TOGAF:** Document aligns with appropriate TOGAF ADM phase
+- [ ] **SQL only:** If DDL file, includes purpose header and migration comments
+- [ ] **API only:** If API spec, includes authentication, endpoints, data models, and examples
+- [ ] **No broken links:** Run markdown linter to validate all links
+- [ ] **Status:** Document status accurately reflects current state (Approved vs. Proposed)
+- [ ] **Date:** Date field is current (within 3 months of last update)
+- [ ] **References:** Document links to supporting HLDs, LLDs, ADRs, or specs as appropriate
+```
+
+---
+
+## When to Create New Documents
+
+| Scenario | Document Type | Example |
+|---|---|---|
+| **New significant decision** | ADR | "Should we adopt serverless for POS edge?" |
+| **New layer or domain** | HLD (then LLDs) | "Edge AI inference at the POS" (HLD-002 + LLD-004 through LLD-009) |
+| **New service/component** | LLD | "Real-time fraud detection service" (LLD-004) |
+| **New data store** | DDL file | "POS local SQLite schema" (pos_local_sqlite_DDL.sql) |
+| **New API service** | API Spec | "AI Inference API" (AI_Inference_API_Spec.md) |
+| **New MLOps concern** | Config file | "Drift monitoring for fraud model" (Drift_Monitoring_Config.md) |
+
+---
+
+## Tools & Validation
+
+**Recommended Tools:**
+- **Markdown Linter:** Check for broken links, consistent formatting
+- **OpenAPI Validator:** Validate API specs against OpenAPI 3.0 schema
+- **SQL Formatter:** Ensure consistent SQL DDL formatting
+- **Mermaid Renderer:** Validate diagram syntax in architecture documents
+
+**Files Covered by This Rule:**
+- All `.md` files in `EnterpriseRetailAI-Docs/`
+- All `.sql` files in `EnterpriseRetailAI-Docs/`
+
+---
+
+## Governance & Approval
+
+- **Review:** All new ADRs require ARB (Architecture Review Board) approval before marking as "Approved"
+- **Updates:** Non-ADR documents (HLDs, LLDs) can be updated by Enterprise Architecture Office without ARB approval
+- **Versioning:** Major version changes (1.0 → 2.0) require re-approval of all dependent documents
+- **Deprecation:** Superseded documents remain in the repository with "Deprecated" status for historical reference
+
+---
+
+## Contact & Questions
+
+For questions about documentation standards, contact:
+- **Enterprise Architecture Office**
+- **Architecture Review Board (ARB) Chair**
+
+See [README.md](EnterpriseRetailAI-Docs/README.md) for project contact information.
