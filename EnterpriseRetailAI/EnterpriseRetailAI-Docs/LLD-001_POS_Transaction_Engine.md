@@ -4,7 +4,7 @@
 ---
 
 | Document ID | LLD-001 | Type | Low-Level Design | Version | 1.0 |
-| Status | Approved | Author | Platform Engineering | Date | June 2026 |
+| Status | Approved |
 
 ---
 
@@ -524,3 +524,4 @@ public class ShiftSummary
 | Payment Service LLD | `02_LLD/LLD-012_Payment_Service.md` |
 | Fraud Detection LLD | `02_LLD/LLD-004_Fraud_Detection_Service.md` |
 | Data Schema LLD | `02_LLD/LLD-013_Data_Schema_Design.md` |
+

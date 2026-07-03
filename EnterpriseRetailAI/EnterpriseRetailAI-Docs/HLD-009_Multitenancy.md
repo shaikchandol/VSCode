@@ -1,7 +1,7 @@
 # HLD-009 — Multitenancy Architecture
 ## EnterpriseRetailAI · Schema-per-Tenant Isolation, Provisioning & Data Residency
 
-| Document ID | HLD-009 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | HLD-009 | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -200,3 +200,4 @@ Trigger: Franchisee agreement ends / termination
 | Data Schema LLD | `02_LLD/LLD-013_Data_Schema_Design.md` |
 | Data Architecture HLD | `01_HLD/HLD-006_Data_Architecture.md` |
 | Security HLD | `01_HLD/HLD-007_Security_Compliance.md` |
+

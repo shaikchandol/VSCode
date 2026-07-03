@@ -1,7 +1,7 @@
 # ADR-007 — P2PE Payment Tokenisation at POS
 ## EnterpriseRetailAI · Architecture Decision Record
 
-| ID | ADR-007 | Status | Approved | Date | 2026-01 | Decider | CISO + CTO + ARB |
+| ID | ADR-007 | Status | Approved |
 
 ---
 
@@ -38,3 +38,4 @@ Implementation:
 - P2PE solution renewal required every 3 years (PCI SSC programme)
 
 **Risk:** If a non-P2PE device is inadvertently enrolled, full SAQ D scope applies immediately. Mitigation: IoT Hub device registry enforces device model whitelist at enrolment.
+

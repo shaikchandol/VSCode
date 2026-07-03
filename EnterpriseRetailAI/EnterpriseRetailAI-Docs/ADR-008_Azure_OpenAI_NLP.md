@@ -1,7 +1,7 @@
 # ADR-008 — Azure OpenAI GPT-4o + RAG for NLP Store Assistant
 ## EnterpriseRetailAI · Architecture Decision Record
 
-| ID | ADR-008 | Status | Approved | Date | 2026-03 | Decider | CDO + CTO + ARB |
+| ID | ADR-008 | Status | Approved |
 
 ---
 
@@ -56,3 +56,4 @@ The NLP Store Assistant must answer customer and staff queries about products, p
 **Cost Control:** Per-tenant token quota enforced at APIM layer. Monthly budget alerts via Azure Cost Management.
 
 **GDPR Compliance:** Azure OpenAI "no-train" data agreement in place. Customer queries never used for model training.
+

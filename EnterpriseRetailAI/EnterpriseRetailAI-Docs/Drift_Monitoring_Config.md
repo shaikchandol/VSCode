@@ -3,7 +3,7 @@
 
 ---
 
-| Document | Drift_Monitoring_Config | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document | Drift_Monitoring_Config | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -640,3 +640,4 @@ groups:
 | Model Cards | `07_MLOps/Model_Cards.md` |
 | Fraud Detection LLD | `02_LLD/LLD-004_Fraud_Detection_Service.md` |
 | Demand Forecasting LLD | `02_LLD/LLD-005_Demand_Forecasting_Pipeline.md` |
+

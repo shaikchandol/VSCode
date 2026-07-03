@@ -1,3 +1,13 @@
+| Attribute | Value |
+|---|---|
+| Document ID | TODO |
+| Type | TODO |
+| Version | 1.0 |
+| Status | Approved |
+| Author | Enterprise Architecture |
+| Date | July 2026 |
+
+---
 # GLOSSARY.md — EnterpriseRetailAI Domain Terminology
 
 **Last Updated:** July 2026 | **Audience:** All stakeholders (architects, developers, business users)
@@ -400,3 +410,4 @@
 ---
 
 **For term context and usage, see referenced HLDs/LLDs above. For navigation, see [AGENTS.md](AGENTS.md).**
+

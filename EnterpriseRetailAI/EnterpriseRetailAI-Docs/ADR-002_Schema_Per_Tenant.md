@@ -1,7 +1,7 @@
 # ADR-002 — Schema-per-Tenant Isolation Model
 ## EnterpriseRetailAI · Architecture Decision Record
 
-| ID | ADR-002 | Status | Approved | Date | 2026-01 | Decider | CTO + CISO + ARB |
+| ID | ADR-002 | Status | Approved |
 
 ---
 
@@ -58,3 +58,4 @@ Implementation:
 - PostgreSQL max schemas ~10,000 per server — adequate for target scale
 
 **Review Trigger:** If tenant count exceeds 5,000 per region, evaluate shard-per-N-tenants model.
+

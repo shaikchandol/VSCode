@@ -1,7 +1,7 @@
 # HLD-008 — Integration Architecture
 ## EnterpriseRetailAI · API Strategy, Event-Driven Integration, External Systems
 
-| Document ID | HLD-008 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | HLD-008 | Version | 1.0 | Status | Approved |
 
 ## 1. Integration Topology
 
@@ -61,3 +61,4 @@ Compensation: if any step fails → alert procurement manager → manual interve
 - LLD-014: API Design
 - LLD-011: Event Sync CRDT Engine
 - LLD-012: Payment Service
+

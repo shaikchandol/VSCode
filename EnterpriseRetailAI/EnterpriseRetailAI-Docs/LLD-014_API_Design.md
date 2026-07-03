@@ -3,7 +3,7 @@
 
 ---
 
-| Document ID | LLD-014 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | LLD-014 | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -354,3 +354,4 @@ AI Inference API additional:
 - LLD-001: POS Transaction Engine
 - LLD-003: Store Edge Orchestration
 - LLD-006: Personalisation Engine (promo rank API)
+

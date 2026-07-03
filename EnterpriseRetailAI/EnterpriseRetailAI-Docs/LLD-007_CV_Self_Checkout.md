@@ -3,7 +3,7 @@
 
 ---
 
-| Document ID | LLD-007 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | LLD-007 | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -484,3 +484,4 @@ Body: { "transaction_id": "...", "frame_timestamp": "..." }
 - HLD-005: AI/ML Platform
 - LLD-003: Store Edge Orchestration
 - LLD-015: MLOps Pipeline Design
+

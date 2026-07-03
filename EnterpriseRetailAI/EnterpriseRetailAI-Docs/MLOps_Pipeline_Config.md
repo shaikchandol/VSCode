@@ -3,7 +3,7 @@
 
 ---
 
-| Document | MLOps_Pipeline_Config | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document | MLOps_Pipeline_Config | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -722,3 +722,4 @@ conda_file:
 | MLOps Pipeline LLD | `02_LLD/LLD-015_MLOps_Pipeline_Design.md` |
 | Model Cards | `07_MLOps/Model_Cards.md` |
 | Drift Monitoring Config | `07_MLOps/Drift_Monitoring_Config.md` |
+

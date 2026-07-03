@@ -1,7 +1,7 @@
 # ADR-003 — Event Sourcing for Transaction State
 ## EnterpriseRetailAI · Architecture Decision Record
 
-| ID | ADR-003 | Status | Approved | Date | 2026-01 | Decider | CTO + CDO + ARB |
+| ID | ADR-003 | Status | Approved |
 
 ---
 
@@ -47,3 +47,4 @@ Every state transition is recorded as an immutable event:
 - Read models maintained as materialised views in Azure SQL
 - ADLS Gen2 lifecycle policy: Hot→Cool→Archive→Delete over 7 years
 - Azure Stream Analytics maintains real-time read projections with < 60s lag
+

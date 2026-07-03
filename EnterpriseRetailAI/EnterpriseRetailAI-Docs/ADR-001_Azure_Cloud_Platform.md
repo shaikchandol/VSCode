@@ -1,7 +1,7 @@
 # ADR-001 — Azure as Primary Cloud Platform
 ## EnterpriseRetailAI · Architecture Decision Record
 
-| ID | ADR-001 | Status | Approved | Date | 2026-01 | Decider | CTO + ARB |
+| ID | ADR-001 | Status | Approved |
 
 ---
 
@@ -71,3 +71,4 @@ Key deciding factors:
 - All AI models trained in ONNX format (portable to any runtime)
 - All data schemas in Avro (cloud-agnostic)
 - Multi-cloud exit strategy documented in runbook
+

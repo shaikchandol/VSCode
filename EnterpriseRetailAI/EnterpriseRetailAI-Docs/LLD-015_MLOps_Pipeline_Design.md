@@ -3,7 +3,7 @@
 
 ---
 
-| Document ID | LLD-015 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | LLD-015 | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -564,3 +564,4 @@ Post-deployment:
 | CV Self-Checkout LLD | `02_LLD/LLD-007_CV_Self_Checkout.md` |
 | Model Cards | `07_MLOps/Model_Cards.md` |
 | Drift Monitoring Config | `07_MLOps/Drift_Monitoring_Config.md` |
+

@@ -1,7 +1,7 @@
 # HLD-010 — Offline Architecture
 ## EnterpriseRetailAI · POS Offline, Store Offline, Sync Recovery
 
-| Document ID | HLD-010 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | HLD-010 | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -174,3 +174,4 @@ T+??:??  Store transitions to ONLINE mode
 | Payment Service LLD | `02_LLD/LLD-012_Payment_Service.md` |
 | POS Application HLD | `01_HLD/HLD-002_POS_Application.md` |
 | Store Edge HLD | `01_HLD/HLD-003_Store_Edge_Platform.md` |
+

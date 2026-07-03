@@ -1,7 +1,7 @@
 # ADR-006 — CRDT-based Offline Conflict Resolution
 ## EnterpriseRetailAI · Architecture Decision Record
 
-| ID | ADR-006 | Status | Approved | Date | 2026-03 | Decider | CTO + CDO + ARB |
+| ID | ADR-006 | Status | Approved |
 
 ---
 
@@ -42,3 +42,4 @@ Specific CRDT types per entity:
   → Mitigation: encapsulated in Sync Manager (Rust) — one implementation, all tenants
 
 **Not Using:** Last-Write-Wins for financial data — unacceptable to silently drop a valid transaction because a later timestamp arrived first.
+

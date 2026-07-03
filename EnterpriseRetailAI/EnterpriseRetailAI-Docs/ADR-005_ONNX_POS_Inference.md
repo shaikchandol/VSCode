@@ -1,7 +1,7 @@
 # ADR-005 — ONNX Runtime for POS Edge AI Inference
 ## EnterpriseRetailAI · Architecture Decision Record
 
-| ID | ADR-005 | Status | Approved | Date | 2026-02 | Decider | CDO + ARB |
+| ID | ADR-005 | Status | Approved |
 
 ---
 
@@ -46,3 +46,4 @@ All models (LightGBM fraud, gradient boost promo ranker) are exported to ONNX fo
 - Some PyTorch custom ops require manual ONNX custom operator registration
 
 **Model Update Protocol:** Azure IoT Hub file upload → POS downloads on next restart → hash verified → loaded.
+

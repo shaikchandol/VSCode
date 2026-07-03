@@ -3,7 +3,7 @@
 
 ---
 
-| Document | Model_Cards | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document | Model_Cards | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -491,3 +491,4 @@ New Model → Training Complete
 | MLOps Pipeline Config | `07_MLOps/MLOps_Pipeline_Config.md` |
 | Drift Monitoring Config | `07_MLOps/Drift_Monitoring_Config.md` |
 | Security & Compliance HLD | `01_HLD/HLD-007_Security_Compliance.md` |
+

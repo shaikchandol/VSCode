@@ -25,7 +25,7 @@ ADRs are immutable — once approved, they are never deleted or overwritten. Sup
 
 ## ADR Index
 
-| ADR ID | Title | Status | Date | Supersedes |
+| ADR ID | Title | Status | Approved |
 |---|---|---|---|---|
 | ADR-001 | Azure as Primary Cloud Platform | ✅ Approved | 2026-01 | — |
 | ADR-002 | Schema-per-Tenant Isolation Model | ✅ Approved | 2026-01 | — |
@@ -40,7 +40,7 @@ ADRs are immutable — once approved, they are never deleted or overwritten. Sup
 
 ## ADR Status Definitions
 
-| Status | Meaning |
+| Status | Approved |
 |---|---|
 | ✅ Approved | Decision adopted; in production or planned for implementation |
 | 🔄 Proposed | Under review by ARB |
@@ -53,3 +53,4 @@ ADRs are immutable — once approved, they are never deleted or overwritten. Sup
 
 - TOGAF EA Document: `00_TOGAF/TOGAF_GlobalRetailPOS_EA_Document.md`
 - System Architecture Overview: `01_HLD/HLD-001_System_Architecture_Overview.md`
+

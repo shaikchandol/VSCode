@@ -3,7 +3,7 @@
 
 ---
 
-| Document ID | LLD-011 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | LLD-011 | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -361,3 +361,4 @@ After every sync recovery, a reconciliation report is auto-generated:
 - HLD-010: Offline Architecture
 - HLD-006: Data Architecture
 - LLD-013: Data Schema Design
+

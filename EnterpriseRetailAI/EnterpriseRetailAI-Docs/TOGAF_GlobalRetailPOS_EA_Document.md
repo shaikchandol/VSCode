@@ -1989,7 +1989,7 @@ Metrics vs. targets → Lessons learned → Principle update if needed
 
 # APPENDIX A — ARCHITECTURE DECISION RECORDS (INDEX)
 
-| ADR ID | Title | Status | Date |
+| ADR ID | Title | Status | Approved |
 |---|---|---|---|
 | ADR-001 | Azure as primary cloud platform | Approved | 2026-01 |
 | ADR-002 | Schema-per-tenant isolation model | Approved | 2026-01 |
@@ -2085,3 +2085,4 @@ External distribution requires written approval from Group CTO.
 **Next Review:** December 2026  
 **Document Owner:** Enterprise Architecture Office  
 **Version:** 1.0.0 — Approved Baseline
+

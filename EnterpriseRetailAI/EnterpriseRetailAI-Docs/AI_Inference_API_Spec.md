@@ -3,7 +3,7 @@
 
 ---
 
-| Document | AI_Inference_API_Spec | Version | v1.0 | Status | Approved | Date | June 2026 |
+| Document | AI_Inference_API_Spec | Version | v1.0 | Status | Approved |
 
 ---
 
@@ -372,3 +372,4 @@ Quota overages return `HTTP 429` with `Retry-After` and upgrade instructions.
 - LLD-008: NLP Store Assistant
 - LLD-009: Predictive Maintenance
 - LLD-014: API Design
+

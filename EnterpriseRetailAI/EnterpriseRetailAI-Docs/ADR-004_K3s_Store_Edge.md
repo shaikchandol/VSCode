@@ -1,7 +1,7 @@
 # ADR-004 — K3s for Store Edge Orchestration
 ## EnterpriseRetailAI · Architecture Decision Record
 
-| ID | ADR-004 | Status | Approved | Date | 2026-02 | Decider | CTO + Head of Retail Tech |
+| ID | ADR-004 | Status | Approved |
 
 ---
 
@@ -53,3 +53,4 @@ Tier C (single-POS kiosks) use Docker Compose (reduced complexity justified).
 - Certificate management for K3s API requires secure initial provisioning
 
 **Hardware Baseline:** Intel NUC 12 Pro (4-core, 16GB RAM) — confirmed compatible.
+

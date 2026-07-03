@@ -1,3 +1,13 @@
+| Attribute | Value |
+|---|---|
+| Document ID | TODO |
+| Type | TODO |
+| Version | 1.0 |
+| Status | Approved |
+| Author | Enterprise Architecture |
+| Date | July 2026 |
+
+---
 # EnterpriseRetailAI — Project Documentation
 
 ## Multitenant Global Retail POS Platform · Azure-Native · AI-First
@@ -156,3 +166,4 @@ POS Terminal (offline-first)
 ---
 
 *EnterpriseRetailAI · Enterprise Architecture Office · Confidential*
+

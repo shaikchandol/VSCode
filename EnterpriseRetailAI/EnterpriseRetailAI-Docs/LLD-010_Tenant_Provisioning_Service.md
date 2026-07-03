@@ -3,7 +3,7 @@
 
 ---
 
-| Document ID | LLD-010 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | LLD-010 | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -357,3 +357,4 @@ OFFBOARDING  → TERMINATED   (all data exported + deleted)
 - HLD-009: Multitenancy Architecture
 - LLD-013: Data Schema Design
 - HLD-007: Security and Compliance
+

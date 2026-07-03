@@ -3,7 +3,7 @@
 
 ---
 
-| Document ID | LLD-012 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | LLD-012 | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -336,3 +336,4 @@ Reconciliation report:
 - HLD-007: Security and Compliance (PCI-DSS controls)
 - LLD-001: POS Transaction Engine (payment integration)
 - LLD-013: Data Schema Design (payment tables DDL)
+

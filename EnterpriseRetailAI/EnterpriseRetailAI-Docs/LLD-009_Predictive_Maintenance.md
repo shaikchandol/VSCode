@@ -3,7 +3,7 @@
 
 ---
 
-| Document ID | LLD-009 | Version | 1.0 | Status | Approved | Date | June 2026 |
+| Document ID | LLD-009 | Version | 1.0 | Status | Approved |
 
 ---
 
@@ -417,3 +417,4 @@ class DigitalTwinsSync:
 - HLD-003: Store Edge Platform
 - LLD-015: MLOps Pipeline Design
 - HLD-002: POS Application (telemetry emission)
+
